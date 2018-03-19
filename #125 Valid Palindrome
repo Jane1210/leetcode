@@ -1,0 +1,28 @@
+public static boolean isPalindrome(String s) {
+
+		s = s.toLowerCase();
+
+		StringBuffer buffer = new StringBuffer();
+
+		for (int i = 0; i <= s.length() - 1; i++) {
+			if (Character.isAlphabetic(s.charAt(i)) || Character.isDigit(s.charAt(i))) {
+				buffer.append(s.charAt(i));
+			}
+		}
+
+		s = buffer.toString();
+
+		System.out.println(s);
+
+		int len = s.length();
+
+		if (len <= 0)
+			return true;
+
+		for (int i = 0, j = len - 1; i < len / 2; i++, j--) {
+			if (s.charAt(i) != s.charAt(j))
+				return false;
+		}
+
+		return true;
+	}
